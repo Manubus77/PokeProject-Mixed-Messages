@@ -1,4 +1,4 @@
-const pokeNames = const pokeNames = [
+const pokeNames = [
   "Bulbasaur",
   "Ivysaur",
   "Venusaur",
@@ -149,10 +149,10 @@ const pokeNames = const pokeNames = [
   "Dragonair",
   "Dragonite",
   "Mewtwo",
-  "Mew"
+  "Mew",
 ];
 
-const pokeDescription = const PokeDescriptions = [
+const pokeDescription = [
   "A strange seed was planted on its back at birth. The plant sprouts and grows with this Pokémon.",
   "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.",
   "The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
@@ -303,5 +303,22 @@ const pokeDescription = const PokeDescriptions = [
   "It can shoot lasers from its eyes to attack enemies.",
   "It is very fast and uses its speed to catch prey.",
   "It has sharp teeth and claws for hunting.",
-  "It is known as the Genetic Pokémon. It was created by a scientist after years of horrific gene splicing and DNA engineering experiments."
+  "It is known as the Genetic Pokémon. It was created by a scientist after years of horrific gene splicing and DNA engineering experiments.",
 ];
+
+//Factory function that creates poke objects instances (name and descrption)
+//and store them in a major poke container accesed by number.
+
+const pokeMaker = (names, description) => {
+  const pokeDex = {};
+  for (let i = 0; i < names.length; i++) {
+    const num = i + 1;
+    pokeDex[num] = {
+      name: names[i],
+      description: description[i],
+    };
+  }
+  return pokeDex;
+};
+
+const pokeDex = pokeMaker(pokeNames, pokeDescription);
