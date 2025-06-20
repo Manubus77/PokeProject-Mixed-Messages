@@ -424,6 +424,7 @@ const pokeMaker = (names, description) => {
   for (let i = 0; i < names.length; i++) {
     const num = i + 1;
     pokeDex[num] = {
+      number: num,
       name: names[i],
       description: description[i],
     };
