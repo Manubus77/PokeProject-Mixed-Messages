@@ -1,106 +1,109 @@
-/* Reset & Base */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Background & Base */
 body {
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: linear-gradient(145deg, #f9f9f9, #e0e0e0);
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #f44336, #b71c1c);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #333;
+  padding: 2rem;
+  color: #fff;
 }
 
-/* Container */
+/* Main Container */
 main {
-  background-color: #fff;
-  padding: 2rem 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  width: 350px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 4px solid #222;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 380px;
+  max-width: 95vw;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   text-align: center;
-  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+  color: #222;
 }
 
-main:hover {
-  transform: scale(1.01);
-}
-
-/* Title */
+/* Pokédex Title */
 h1 {
-  color: #d32f2f; /* Pokémon red */
-  font-size: 2rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.3rem;
   margin-bottom: 1.5rem;
-  letter-spacing: 1px;
+  color: #d32f2f;
+  text-shadow: 1px 1px 2px #000;
 }
 
-/* Button */
+/* Button Styling */
 #generate-btn {
-  background-color: #fbc02d; /* Pikachu yellow */
-  color: #111;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
+  background: linear-gradient(to bottom, #fdd835, #fbc02d);
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 0.7rem 1.2rem;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 4px 0 #aaa;
+  transition: all 0.2s ease-in-out;
 }
 
 #generate-btn:hover {
-  background-color: #ffeb3b;
+  background: #fff176;
   transform: translateY(-2px);
 }
 
-/* Pokémon Display */
+/* Pokémon Display Area */
 #pokemon-container {
   margin-top: 2rem;
 }
 
 #pokemon-sprite {
-  width: 120px;
+  width: 130px;
   height: auto;
-  margin-bottom: 1rem;
   image-rendering: pixelated;
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+  margin-bottom: 1rem;
 }
 
 #pokemon-name {
   font-size: 1.4rem;
-  color: #424242;
+  color: #2e7d32;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 #pokemon-description {
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.4;
-  padding: 0 0.5rem;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 0 auto;
 }
 
-/* Responsive Design */
-@media (max-width: 400px) {
-  main {
-    width: 90%;
-    padding: 1.5rem;
-  }
-
-  #pokemon-sprite {
-    width: 100px;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  #generate-btn {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.2rem;
-  }
+/* Pokéball background pattern */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png");
+  opacity: 0.05;
+  background-size: 80px;
+  background-repeat: repeat;
+  z-index: 0;
 }
