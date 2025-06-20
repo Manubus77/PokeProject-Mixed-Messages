@@ -1,0 +1,106 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(145deg, #f9f9f9, #e0e0e0);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+/* Container */
+main {
+  background-color: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+main:hover {
+  transform: scale(1.01);
+}
+
+/* Title */
+h1 {
+  color: #d32f2f; /* Pokémon red */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Button */
+#generate-btn {
+  background-color: #fbc02d; /* Pikachu yellow */
+  color: #111;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#generate-btn:hover {
+  background-color: #ffeb3b;
+  transform: translateY(-2px);
+}
+
+/* Pokémon Display */
+#pokemon-container {
+  margin-top: 2rem;
+}
+
+#pokemon-sprite {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+  image-rendering: pixelated;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+#pokemon-name {
+  font-size: 1.4rem;
+  color: #424242;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+#pokemon-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+  padding: 0 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  main {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  #pokemon-sprite {
+    width: 100px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  #generate-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
